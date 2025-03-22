@@ -1,103 +1,138 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Card from "@/components/Card";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="w-screen min-h-screen flex justify-center items-center py-10 px-4 bg-neutral-950">
+      <div className="w-full max-w-7xl h-full grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 grid-rows-auto md:grid-rows-6 gap-3">
+        {/* Profile Card with Animation */}
+        <Card
+          className="row-span-2 col-span-full md:col-span-4 font-manrope flex justify-center items-center relative overflow-hidden"
+          radius="full"
+        >
+          <motion.div
+            variants={{
+              initial: {
+                width: "50px",
+                height: "50px",
+                left: "20%",
+                borderRadius: "100%",
+              },
+              hover: {
+                left: "0%",
+                width: "600px",
+                height: "600px",
+              },
+            }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="absolute  bg-white z-0"
+          />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Profile Information */}
+          <motion.div
+            className="flex items-center justify-center gap-3 z-10"
+            variants={{
+              initial: { opacity: 1 },
+              hover: { opacity: 0 },
+            }}
+            transition={{ duration: 0.2, delay: 0.3 }}
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/profile_pic.jpg"
+              alt="Profile picture of Devansh Bhavsar"
+              width={50}
+              height={50}
+              className="rounded-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <span className="font-bold text-2xl md:text-3xl tracking-tight">
+              Devansh Bhavsar
+            </span>
+          </motion.div>
+
+          {/* Bio Information */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center p-6"
+            variants={{
+              initial: { opacity: 0 },
+              hover: { opacity: 1 },
+            }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <p className="font-medium text-black text-center max-w-md">
+              I'm Devansh, 1st year computer science student from GLS
+              University, Ahmedabad, Gujarat. I am a passionate developer who
+              loves to learn new technologies.
+            </p>
+          </motion.div>
+        </Card>
+
+        {/* Skills Card */}
+        <Card className="row-span-2 col-span-full md:col-span-2">
+          <h2 className="text-xl font-bold mb-2">Skills</h2>
+          <div className="flex flex-wrap gap-2">
+            {["React", "NextJS", "TypeScript", "TailwindCSS"].map((skill) => (
+              <span
+                key={skill}
+                className="px-2 py-1 bg-neutral-800 rounded-md text-sm"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </Card>
+
+        {/* Projects Card */}
+        <Card className="row-span-5 col-span-full md:col-span-4">
+          <h2 className="text-xl font-bold mb-3">Featured Projects</h2>
+          <p>Showcase your best work here with descriptions and links</p>
+        </Card>
+
+        {/* Experience Card */}
+        <Card className="row-span-4 col-span-full md:col-span-3">
+          <h2 className="text-xl font-bold mb-3">Experience</h2>
+          <p>Your relevant work or project experience</p>
+        </Card>
+
+        {/* Education Card */}
+        <Card className="row-span-3 col-span-full md:col-span-3">
+          <h2 className="text-xl font-bold mb-3">Education</h2>
+          <p>GLS University, Computer Science</p>
+          <p className="text-sm text-neutral-400">2024 - Present</p>
+        </Card>
+
+        {/* Contact Card */}
+        <Card className="col-span-full md:col-span-5">
+          <h2 className="text-xl font-bold mb-2">Get In Touch</h2>
+          <div className="flex gap-4">
+            <a
+              href="mailto:your-email@example.com"
+              className="hover:text-white"
+            >
+              Email
+            </a>
+            <a
+              href="https://github.com/yourusername"
+              className="hover:text-white"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              className="hover:text-white"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </Card>
+
+        {/* Last Card */}
+        <Card className="col-span-full md:col-span-2">
+          <p className="text-sm text-neutral-400">© 2025 Devansh Bhavsar</p>
+        </Card>
+      </div>
+    </main>
   );
 }
