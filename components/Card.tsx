@@ -9,9 +9,9 @@ interface Props {
 export default function Card(props: Props) {
   return (
     <div
-      className={`p-2 h-full w-full relative flex justify-center items-center border-neutral-700 font-sans text-neutral-300 overflow-hidden ${
+      className={`p-2 flex w-full h-full justify-center items-center border-neutral-700 font-sans text-neutral-300  ${
         props.className || ""
-      }`}
+      } overflow-hidden`}
     >
       {props.children}
 

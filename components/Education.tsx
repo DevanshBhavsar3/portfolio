@@ -8,7 +8,7 @@ interface EducationProps {
 export default function Education(props: EducationProps) {
   const activeEducationStyle = props.active
     ? "bg-green-400 "
-    : "bg-neutral-400";
+    : "bg-neutral-500";
 
   return (
     <div className="flex justify-start items-center gap-3 relative">

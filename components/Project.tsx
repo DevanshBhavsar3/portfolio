@@ -11,48 +11,70 @@ interface ProjectProps {
   image: string;
   favicon?: string;
   tags?: string[];
+  maximized: boolean;
 }
 
 export default function Project(props: ProjectProps) {
   return (
-    <div className="border border-neutral-700 p-2 rounded-md w-full space-y-2">
-      <div className="group w-full h-52 rounded-md overflow-hidden">
-        <a href={props.url} target="_blank">
+    <div
+      className={`border border-neutral-700 p-2 rounded-md w-full space-y-4 space-x-2 ${
+        props.maximized && "flex justify-start items-start h-1/2"
+      }`}
+    >
+      <div
+        className={`group h-full rounded-md overflow-hidden ${
+          props.maximized ? "w-1/2" : "w-full"
+        }`}
+      >
+        <a href={props.url} target="_blank" className="h-full w-full">
           <Image
             src={props.image}
             alt="demo"
             width={200}
             height={200}
-            className="group-hover:opacity-70 cursor-pointer w-full h-full rounded-md scale-125"
+            className="group-hover:opacity-70 cursor-pointer h-full w-full rounded-md aspect-video"
           />
         </a>
       </div>
-      <div className="flex justify-between items-center">
+      <div
+        className={`w-full h-full flex justify-center items-start flex-col space-y-2 ${
+          props.maximized && ""
+        }`}
+      >
         <div className="flex justify-center items-center gap-3">
           {props.favicon && (
             <img src={`${props.favicon}`} alt="favicon" className="w-7 h-7" />
           )}
           <p className="text-md font-semibold">{props.title}</p>
         </div>
-        <Link bgEffect={true} href={props.github}>
-          <Github size={16} />
-        </Link>
-      </div>
-      <div className="text-xs font-normal mb-2 text-neutral-300">
-        {props.description}
-      </div>
-
-      <div className="flex justify-between items-baseline">
-        <div className="flex justify-start items-center gap-2">
-          {props.tags &&
-            props.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
+        <div className="flex-1 text-xs font-normal mb-2 text-neutral-300">
+          {props.description}
         </div>
-        <Link bgEffect={true} href={props.url}>
-          <div className="flex justify-center items-center gap-2 px-2">
-            <p className="text-sm font-medium">Visit</p>
-            <ExternalLink size={16} />
+
+        <div
+          className={`w-full flex justify-between items-baseline ${
+            props.maximized && "flex-col gap-2"
+          }`}
+        >
+          <div className="flex justify-start items-center gap-2">
+            {props.tags &&
+              props.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
           </div>
-        </Link>
+          <div className="flex justify-center items-center">
+            <Link bgEffect={true} href={props.github}>
+              <div className="flex justify-center items-center gap-2 px-2">
+                <p className="text-sm font-medium">Github</p>
+                <Github size={16} />
+              </div>
+            </Link>
+            <Link bgEffect={true} href={props.url}>
+              <div className="flex justify-center items-center gap-2 px-2">
+                <p className="text-sm font-medium">Visit</p>
+                <ExternalLink size={16} />
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
