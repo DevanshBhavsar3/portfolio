@@ -1,6 +1,7 @@
 import { ExternalLink, Github } from "lucide-react";
 import Link from "./Link";
 import Image from "next/image";
+import Tag from "./Tag";
 
 interface ProjectProps {
   title: string;
@@ -9,39 +10,49 @@ interface ProjectProps {
   description: string;
   image: string;
   favicon?: string;
+  tags?: string[];
 }
 
 export default function Project(props: ProjectProps) {
   return (
-    <div className="group bg-neutral-900 py-2 px-4 rounded-md w-full">
-      <div className="flex justify-between items-center mb-2">
-        <div className="flex justify-center items-center gap-3">
-          {props.favicon && (
-            <img src={`${props.favicon}`} alt="favicon" className="w-7 h-7" />
-          )}
-          <p className="text-lg font-medium">{props.title}</p>
-        </div>
-        <div className="flex justify-center items-center gap-3">
-          <Link href={props.github}>
-            <Github size={16} />
-          </Link>
-          <Link href={props.url}>
-            <ExternalLink size={16} />
-          </Link>
-        </div>
-      </div>
-      <div className="text-sm mb-2">{props.description}</div>
-
-      <div className="group-hover:block hidden bg-neutral-800 w-full h-52 mb-2 rounded-md">
+    <div className="border border-neutral-700 p-2 rounded-md w-full space-y-2">
+      <div className="group w-full h-52 rounded-md overflow-hidden">
         <a href={props.url} target="_blank">
           <Image
             src={props.image}
             alt="demo"
             width={200}
             height={200}
-            className="cursor-pointer w-full h-full rounded-md"
+            className="group-hover:opacity-70 cursor-pointer w-full h-full rounded-md scale-125"
           />
         </a>
+      </div>
+      <div className="flex justify-between items-center">
+        <div className="flex justify-center items-center gap-3">
+          {props.favicon && (
+            <img src={`${props.favicon}`} alt="favicon" className="w-7 h-7" />
+          )}
+          <p className="text-md font-semibold">{props.title}</p>
+        </div>
+        <Link bgEffect={true} href={props.github}>
+          <Github size={16} />
+        </Link>
+      </div>
+      <div className="text-xs font-normal mb-2 text-neutral-300">
+        {props.description}
+      </div>
+
+      <div className="flex justify-between items-baseline">
+        <div className="flex justify-start items-center gap-2">
+          {props.tags &&
+            props.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
+        </div>
+        <Link bgEffect={true} href={props.url}>
+          <div className="flex justify-center items-center gap-2 px-2">
+            <p className="text-sm font-medium">Visit</p>
+            <ExternalLink size={16} />
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #1E1E1E;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #424242;
+  }
+}
+
 @theme {
   --font-sans: 'Manrope', sans-serif;
   --font-serif: 'Instrument Serif', serif;
