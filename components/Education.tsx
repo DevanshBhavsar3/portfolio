@@ -20,7 +20,7 @@ export default function Education(props: EducationProps) {
         <p className={`h-1.5 w-1.5 rounded-full ${activeEducationStyle}`} />
       </div>
 
-      <hr className="absolute top-5 left-1.5 -translate-x-1/2 border h-10 border-neutral-700" />
+      <hr className="absolute top-5 left-1.5 -translate-x-1/2 border h-10 border-zinc-700" />
 
       <div>
         <p className="text-sm font-semibold">{props.institute}</p>

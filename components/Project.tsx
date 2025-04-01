@@ -17,7 +17,7 @@ interface ProjectProps {
 export default function Project(props: ProjectProps) {
   return (
     <div
-      className={`border border-neutral-700 p-2 rounded-md w-full space-y-4 space-x-2 ${
+      className={`border border-zinc-800 p-2 rounded-md w-full space-y-4 space-x-2 ${
         props.maximized && "flex justify-start items-start h-1/2"
       }`}
     >
@@ -32,7 +32,7 @@ export default function Project(props: ProjectProps) {
             alt="demo"
             width={200}
             height={200}
-            className="group-hover:opacity-70 cursor-pointer h-full w-full rounded-md aspect-video"
+            className="group-hover:opacity-70 cursor-pointer h-full w-full rounded-md aspect-auto"
           />
         </a>
       </div>

@@ -8,8 +8,8 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="w-screen min-h-screen flex justify-center items-center py-10 px-4 bg-linear-to-b from-[#1E1E1E] to-[#121212]">
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 grid-rows-auto md:grid-rows-6 divide-x divide-y border border-neutral-700 relative">
+    <main className="w-screen min-h-screen flex justify-center items-center py-10 px-4 bg-black">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 grid-rows-auto bg-black md:grid-rows-6 divide-x divide-y border border-zinc-800 relative">
         {/* Profile Card */}
         <Card className="row-span-1 col-span-full md:col-span-3 gap-3">
           <img
@@ -61,7 +61,7 @@ export default function Home() {
 
         {/* Education Card */}
         <Card className="row-span-4 col-span-3 md:col-span-3 flex-col justify-start items-start gap-3 border-b-0 p-4">
-          <h2 className="text-xl font-bold text-[#EEEEEE]">Education</h2>
+          <h2 className="text-xl font-bold">Education</h2>
           <Education
             institute="GLS University, Computer Science"
             startYear={2024}
