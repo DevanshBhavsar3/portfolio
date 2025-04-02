@@ -5,6 +5,8 @@ import Clock from "@/components/Clock";
 import Education from "@/components/Education";
 import Computer from "@/public/Computer";
 import Projects from "@/components/Projects";
+import Image from "next/image";
+import Certificate from "@/components/Certificate";
 
 export default function Home() {
   return (
@@ -32,20 +34,6 @@ export default function Home() {
 
         {/* Time Card */}
         <Card className="row-span-1 col-span-full md:col-span-3">
-          {/* Globe
-          <div className="text-center w-full rounded-md border border-neutral-800 bg-neutral-900 relative overflow-hidden h-full">
-            TODO: Highlight india on the map when hovered
-            <div className="absolute -bottom-10 hover:-bottom-5 hover:-right-7 -right-10 h-52 w-52 rounded-full hover:scale-200 transition-all duration-400 bg-radial-[at_25%_25%] from-neutral-200 to-zinc-900 to-75%">
-              <Image
-                src="/globe.png"
-                alt="Earth globe"
-                width={200}
-                height={200}
-                className="cursor-pointer w-full h-full scale-125 rounded-full object-cover"
-              />
-            </div>
-          </div> */}
-
           <Clock />
         </Card>
 
@@ -55,13 +43,21 @@ export default function Home() {
           University, Ahmedabad, Gujarat.
         </Card>
 
+        {/* Computer Card */}
         <Card className="row-span-4 col-span-2 md:col-span-3">
           <Computer />
         </Card>
 
         {/* Education Card */}
-        <Card className="row-span-4 col-span-3 md:col-span-3 flex-col justify-start items-start gap-3 border-b-0 p-4">
-          <h2 className="text-xl font-bold">Education</h2>
+        <Card className="row-span-3 col-span-3 md:col-span-3 flex-col justify-start items-start gap-4">
+          <h2 className="text-xl font-bold">Education & Courses</h2>
+
+          <Education
+            institute="100xDevs Cohort 3"
+            startYear={2025}
+            endYear={"Present"}
+            active={true}
+          />
           <Education
             institute="GLS University, Computer Science"
             startYear={2024}
@@ -69,44 +65,74 @@ export default function Home() {
             active={true}
           />
           <Education
-            institute="7"
+            institute="HSC"
             startYear={2022}
             endYear={2024}
             active={false}
           />
           <Education
-            institute="6"
-            startYear={"..."}
-            endYear={2022}
+            institute="Harvard's CS50P (Python)"
+            startYear={2022}
+            endYear={2024}
             active={false}
           />
           <Education
-            institute="5"
-            startYear={"..."}
-            endYear={2022}
-            active={false}
-          />
-          <Education
-            institute="3"
-            startYear={"..."}
-            endYear={2022}
-            active={false}
-          />
-          <Education
-            institute="1"
-            startYear={"..."}
-            endYear={2022}
-            active={false}
-          />
-          <Education
-            institute="1"
-            startYear={"..."}
+            institute="SSC"
+            startYear={2020}
             endYear={2022}
             active={false}
           />
         </Card>
 
-        <Card>Cat</Card>
+        {/* Certificates Card */}
+        <Card className="row-span-1 col-span-3 md:col-span-3 flex-col justify-start items-start gap-3 border-b-0 ">
+          <h2 className="text-xl font-bold">Certificates</h2>
+          <ul className="h-full w-full list-inside list-disc">
+            <Certificate
+              title="CVMU Hackathon"
+              url="https://3kzwnzp8m3.ufs.sh/f/RUEHGMs1XJU6OKNOzAhicA0gzmWZ4XrJYxLvjh6EMBKU8e5k"
+            />
+            <Certificate
+              title="Harvad's CS50P (Python)"
+              url="https://3kzwnzp8m3.ufs.sh/f/RUEHGMs1XJU6GLCd2no3lwCaO54YvS1m6yuMEhfF0IqZ7Ni9"
+            />
+          </ul>
+        </Card>
+
+        {/* Tech Stack Card */}
+        <Card className="p-0">
+          {/* @ts-ignore */}
+          <marquee
+            behavior="scroll"
+            direction="up"
+            scrollamount="3"
+            className="relative h-16 overflow-hidden *:text-xs *:font-medium *:text-neutral-400"
+          >
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>Javascript</p>
+            <p>NodeJS</p>
+            <p>Express</p>
+            <p>MongoDB</p>
+            <p>VITE</p>
+            <p>React</p>
+            <p>TailwindCSS</p>
+            <p>Typescript</p>
+            <p>Postgres</p>
+            <p>Prisma</p>
+            <p>NextJS</p>
+            <p>NextAuth</p>
+            <p>NVIM</p>
+            <p>Bun</p>
+            <p>Zig</p>
+            <p>Figma</p>
+            <p>AWS</p>
+            <p>GCP</p>
+            <p>Docker</p>
+            <p>Python</p>
+            {/* @ts-ignore */}
+          </marquee>
+        </Card>
 
         {/* Socials Card */}
         <Card className="col-span-full md:col-span-2 justify-evenly relative">

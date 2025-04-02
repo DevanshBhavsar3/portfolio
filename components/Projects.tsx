@@ -9,7 +9,7 @@ export default function Projects() {
 
   return (
     <div
-      className={`flex flex-col transition-all duration-300 ${
+      className={`flex flex-col duration-300 ${
         maximized ? "absolute inset-0 z-30 p-4 bg-black w-full" : "max-h-140"
       }`}
     >
