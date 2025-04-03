@@ -100,13 +100,15 @@ export default function Home() {
         </Card>
 
         {/* Tech Stack Card */}
-        <Card className="p-0">
+        <Card className="p-0 flex-col relative">
+          <div className="absolute z-10 top-0 left-0 bg-linear-to-b from-black to-black blur-md w-full h-[45%]"></div>
+          <div className="absolute z-10 bottom-0 left-0 bg-linear-to-b from-black to-black blur-md w-full h-[45%]"></div>
           {/* @ts-ignore */}
           <marquee
             behavior="scroll"
             direction="up"
-            scrollamount="3"
-            className="relative h-16 overflow-hidden *:text-xs *:font-medium *:text-neutral-400"
+            scrollamount="1"
+            className="relative z-0 h-16 overflow-hidden *:text-xs *:font-medium *:text-neutral-200"
           >
             <p>HTML</p>
             <p>CSS</p>

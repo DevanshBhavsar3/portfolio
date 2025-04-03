@@ -18,38 +18,34 @@ export default function Project(props: ProjectProps) {
   return (
     <div
       className={`border border-zinc-800 p-2 rounded-md w-full space-y-4 space-x-2 ${
-        props.maximized && "flex justify-start items-start h-1/2"
+        props.maximized && "flex justify-start items-start h-1/2 w-full"
       }`}
     >
-      <div
-        className={`group h-full rounded-md overflow-hidden ${
-          props.maximized ? "w-1/2" : "w-full"
-        }`}
-      >
-        <a href={props.url} target="_blank" className="h-full w-full">
-          <Image
-            src={props.image}
-            alt="demo"
-            width={200}
-            height={200}
-            className="group-hover:opacity-70 cursor-pointer h-full w-full rounded-md aspect-auto"
-          />
-        </a>
-      </div>
-      <div
-        className={`w-full h-full flex justify-center items-start flex-col space-y-2 ${
-          props.maximized && ""
-        }`}
-      >
+      <a href={props.url} target="_blank" className="w-1/2 h-full">
+        <Image
+          src={props.image}
+          alt="demo"
+          width={200}
+          height={200}
+          className="group-hover:opacity-70 cursor-pointer h-full w-full rounded-md aspect-video"
+        />
+      </a>
+      <div className="w-full h-full flex justify-center items-start flex-col space-y-2">
         <div className="flex justify-center items-center gap-3">
           {props.favicon && (
             <img src={`${props.favicon}`} alt="favicon" className="w-7 h-7" />
           )}
           <p className="text-md font-semibold">{props.title}</p>
         </div>
-        <div className="flex-1 text-xs font-normal mb-2 text-neutral-300">
-          {props.description}
-        </div>
+        {props.maximized ? (
+          <div className="flex-1 text-sm font-medium mb-2 text-neutral-300">
+            {props.description}
+          </div>
+        ) : (
+          <div className="flex-1 text-xs font-normal mb-2 text-neutral-300 max-w-md truncate">
+            {props.description}
+          </div>
+        )}
 
         <div
           className={`w-full flex justify-between items-baseline ${
