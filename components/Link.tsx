@@ -11,7 +11,7 @@ export default function Link(props: LinkProps) {
       href={props.href}
       target={props.redirect === false ? "" : "_blank"}
       className={`${
-        props.bgEffect && "hover:bg-neutral-800 p-2"
+        props.bgEffect && "hover:bg-neutral-800 my-2 md:p-2"
       }  hover:text-white transition-all duration-300 rounded-full group`}
     >
       {props.children}

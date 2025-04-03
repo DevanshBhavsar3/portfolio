@@ -9,8 +9,8 @@ export default function Projects() {
 
   return (
     <div
-      className={`flex flex-col duration-300 ${
-        maximized ? "absolute inset-0 z-30 p-4 bg-black w-full" : "max-h-150"
+      className={`w-full h-full overflow-hidden flex flex-col duration-300 ${
+        maximized ? "absolute inset-0 z-30 p-4 bg-black" : "lg:max-h-150"
       }`}
     >
       {/* Header */}
@@ -18,14 +18,14 @@ export default function Projects() {
         <h2 className="text-xl font-bold">Projects</h2>
         <button
           onClick={() => setMaximized(!maximized)}
-          className="cursor-pointer p-2 hover:bg-neutral-800 rounded-full"
+          className="hidden md:block cursor-pointer p-2 hover:bg-neutral-800 rounded-full"
         >
           {maximized ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
         </button>
       </div>
 
       {/* Projects container */}
-      <div className="overflow-y-auto flex-1 pr-2 space-y-3 scrollbar rounded-md ">
+      <div className="overflow-y-auto flex-1 space-y-3 scrollbar rounded-md ">
         <Project
           title="Drawify"
           github="https://github.com/DevanshBhavsar3/excalidraw"

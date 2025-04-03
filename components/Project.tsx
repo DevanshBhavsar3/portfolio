@@ -48,13 +48,13 @@ export default function Project(props: ProjectProps) {
             {props.description}
           </div>
         ) : (
-          <div className="flex-1 text-xs font-normal mb-2 text-neutral-300 max-w-md truncate">
+          <div className="flex-1 text-xs font-normal mb-2 text-neutral-300 max-w-full md:truncate">
             {props.description}
           </div>
         )}
 
         <div
-          className={`w-full flex justify-between items-baseline ${
+          className={`w-full flex justify-between items-baseline flex-col lg:flex-row mt-2 ${
             props.maximized && "flex-col gap-2"
           }`}
         >
@@ -62,7 +62,7 @@ export default function Project(props: ProjectProps) {
             {props.tags &&
               props.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center mt-2">
             <Link bgEffect={true} href={props.github}>
               <div className="flex justify-center items-center gap-2 px-2">
                 <p className="text-sm font-medium">Github</p>
