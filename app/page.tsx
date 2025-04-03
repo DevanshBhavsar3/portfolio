@@ -41,7 +41,7 @@ export default function Home() {
         <Card className="order-2  md:order-4 row-span-1 col-span-full md:col-span-3 text-sm font-medium text-center">
           <p className="max-w-sm">
             {
-              "Hi, I'm Devansh Bhavsar 1'st year computer science student from GLS University, Ahmedabad, Gujarat."
+              "Hi! I'm Devansh Bhavsar 1'st year Computer Science student from GLS University, Ahmedabad, Gujarat."
             }
           </p>
         </Card>
