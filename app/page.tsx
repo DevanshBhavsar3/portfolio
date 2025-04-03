@@ -15,7 +15,7 @@ export default function Home() {
         {/* Profile Card */}
         <Card className="row-span-1 col-span-full md:col-span-3 gap-3">
           <Image
-            src="https://avatars.githubusercontent.com/u/129303370?s=400&u=e9c54f80d3e6c6baf41ac093b748e1e25852420c&v=4"
+            src="/profile_pic.jpg"
             className="rounded-full"
             width={50}
             height={50}
