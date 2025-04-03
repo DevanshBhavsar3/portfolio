@@ -33,7 +33,7 @@ export default function Project(props: ProjectProps) {
       <div className="w-full h-full flex justify-center items-start flex-col space-y-2">
         <div className="flex justify-center items-center gap-3">
           {props.favicon && (
-            <img src={`${props.favicon}`} alt="favicon" className="w-7 h-7" />
+            <Image src={`${props.favicon}`} alt="favicon" className="w-7 h-7" />
           )}
           <p className="text-md font-semibold">{props.title}</p>
         </div>

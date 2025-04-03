@@ -5,8 +5,8 @@ import Clock from "@/components/Clock";
 import Education from "@/components/Education";
 import Computer from "@/public/Computer";
 import Projects from "@/components/Projects";
-import Image from "next/image";
 import Certificate from "@/components/Certificate";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-6 lg:grid-cols-10 grid-rows-auto bg-black md:grid-rows-6 divide-x divide-y border border-zinc-800 relative">
         {/* Profile Card */}
         <Card className="row-span-1 col-span-full md:col-span-3 gap-3">
-          <img
+          <Image
             src="https://avatars.githubusercontent.com/u/129303370?s=400&u=e9c54f80d3e6c6baf41ac093b748e1e25852420c&v=4"
             className="rounded-full"
             width={50}
@@ -39,8 +39,9 @@ export default function Home() {
 
         {/* About Card */}
         <Card className="row-span-1 col-span-3 text-sm font-medium text-center">
-          Hi, I'm Devansh Bhavsar 1'st year computer science student from GLS
-          University, Ahmedabad, Gujarat.
+          {
+            "Hi, I'm Devansh Bhavsar 1'st year computer science student from GLS University, Ahmedabad, Gujarat."
+          }
         </Card>
 
         {/* Computer Card */}
@@ -103,7 +104,7 @@ export default function Home() {
         <Card className="p-0 flex-col relative">
           <div className="absolute z-10 top-0 left-0 bg-linear-to-b from-black to-black blur-md w-full h-[45%]"></div>
           <div className="absolute z-10 bottom-0 left-0 bg-linear-to-b from-black to-black blur-md w-full h-[45%]"></div>
-          {/* @ts-ignore */}
+          {/* @ts-expect-error marqee_error */}
           <marquee
             behavior="scroll"
             direction="up"
@@ -132,7 +133,7 @@ export default function Home() {
             <p>GCP</p>
             <p>Docker</p>
             <p>Python</p>
-            {/* @ts-ignore */}
+            {/* @ts-expect-error marqee_error */}
           </marquee>
         </Card>
 
